@@ -169,15 +169,26 @@ html {
   height: 100vh;
 }
 #matches-section .match-container {
+  position: relative;
+  height: 40vh;
+  width: 80%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
   gap: 0;
-  position: relative;
-  height: 40vh;
-  width: 80%;
+}
+@media (orientation: portrait) {
+  #matches-section .match-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0;
+  }
 }
 #matches-section .match-container .match-info {
   border: 2px solid rgba(255, 255, 255, 0.05);
@@ -191,6 +202,12 @@ html {
   box-sizing: border-box;
   width: 50%;
   height: 100%;
+}
+@media (orientation: portrait) {
+  #matches-section .match-container .match-info {
+    width: 100%;
+    height: 50%;
+  }
 }
 #matches-section .match-container .match-info .main-content {
   display: flex;
@@ -352,6 +369,19 @@ html {
 }
 #matches-section .match-container .match-contestants ul li button:hover {
   background: rgba(59, 58, 58, 0.2);
+}
+@media (orientation: portrait) {
+  #matches-section .match-container .match-contestants {
+    width: 100%;
+    height: 50%;
+    left: 0;
+  }
+  #matches-section .match-container .match-contestants ul {
+    padding: 0;
+  }
+  #matches-section .match-container .match-contestants ul li {
+    margin-left: 0;
+  }
 }
 
 #login-container {

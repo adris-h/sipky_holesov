@@ -203,6 +203,10 @@ gsap.ticker.add((time) => {
     lenis.raf(time * 1000);
 });
 
+window.addEventListener('resize', () => {
+    ScrollTrigger.refresh();
+});
+
 gsap.ticker.lagSmoothing(0);
 
 const pageHero = document.getElementById('hero-section');
