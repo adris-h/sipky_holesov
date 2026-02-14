@@ -1,4 +1,3 @@
-const passwordInput = document.querySelector('#password');
 
 function showHidePassword(input, btn) {
     if (input.type === "password") {
@@ -57,7 +56,6 @@ function openForm() {
     });
 
     redoAllListeners();
-
     addStopPropagationToForm();
 }
 
@@ -84,13 +82,6 @@ document.addEventListener('click', (event) => {
         closeForm();
     }
 });
-function onClickOutside(el, callback) {
-    document.addEventListener('click', event => {
-        if (!el.contains(event.target)) callback();
-
-    });
-}
-
 
 function redoAllListeners() {
     const changeFormType = document.getElementById('change-form');
@@ -100,9 +91,11 @@ function redoAllListeners() {
 
     const showPassBtn = document.getElementById('show-password');
     const passwordInput = document.querySelector('#password');
-    showPassBtn.addEventListener('click', () => {
+    showPassBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
         showHidePassword(passwordInput, showPassBtn);
     });
+
 
     const registerButton = document.getElementById('register');
     if (registerButton) {
@@ -124,6 +117,9 @@ function redoAllListeners() {
             closeForm();
         })
     }
+
+
+
 }
 
 function changeForm(){
@@ -138,6 +134,8 @@ function changeForm(){
 
         form.innerHTML = registerForm();
     }
+
+
     redoAllListeners();
     addStopPropagationToForm();
 }
@@ -188,4 +186,53 @@ function loginForm(){
         <button id="login" class="submit-button">Přihlásit se</button>
         <a id="change-form">nemám účet</a>
     `;
+}
+/*import { gsap } from "gsap";
+import Lenis from 'lenis'*/
+
+gsap.registerPlugin(ScrollTrigger);
+const lenis = new Lenis({
+    duration: 1,
+    smoothWheel: true,
+    smoothTouch: false,
+});
+
+lenis.on('scroll', ScrollTrigger.update);
+
+gsap.ticker.add((time) => {
+    lenis.raf(time * 1000);
+});
+
+gsap.ticker.lagSmoothing(0);
+
+const pageHero = document.getElementById('hero-section');
+
+if(pageHero){
+    // Parallax timeline
+    const tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: "#hero-section",
+            start: "top top",
+            end: "+=100%",
+            scrub: 0
+
+        }
+    });
+
+    const layers = gsap.utils.toArray(".parallax");
+    layers.forEach(layer => {
+        const depth = parseFloat(layer.dataset.depth || "0");
+        const movement = -(layer.offsetHeight * depth);
+        tl.to(layer, {y: movement, ease: "none"}, 0);
+    });
+
+// Separate pin
+    ScrollTrigger.create({
+        trigger: "#hero-section",
+        start: "top top",
+        end: "+=100%",
+        pin: true,
+        pinSpacing: false,
+        anticipatePin: 1
+    });
 }
