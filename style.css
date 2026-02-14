@@ -1,0 +1,356 @@
+@font-face {
+  font-family: Novecentos;
+  src: url("font/Novecentosanswide-Normal.otf");
+}
+body {
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  background: #151414;
+  color: #e0e6e9;
+  overflow-x: hidden;
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  font-family: Novecentos, serif;
+}
+
+:root {
+  font-size: 30px;
+  --acc-clr: #2290bc;
+}
+
+* {
+  font-family: "Novecentos", sans-serif;
+}
+
+::selection {
+  background: #e0e6e9;
+  color: #151414;
+}
+
+#navbar {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  width: 100vw;
+  box-sizing: border-box;
+  padding: 1rem 1rem;
+}
+#navbar a {
+  font-size: 0.8rem;
+  color: white;
+  text-decoration: none;
+}
+#navbar #logo-link {
+  transition: 0.15s all;
+}
+#navbar #nav-links {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+#navbar #nav-links .nav-link {
+  border-radius: 10px;
+  padding: 0.2rem 0.6rem 0.2rem 0.6rem;
+  transition: 0.15s all;
+  line-height: 0.9rem;
+  cursor: pointer;
+  background: rgba(85, 85, 85, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  color: #e0e6e9;
+}
+#navbar #nav-links .nav-link:active {
+  background: rgba(59, 58, 58, 0.2);
+}
+#navbar #nav-links .nav-link:focus {
+  background: rgba(59, 58, 58, 0.2);
+}
+#navbar #nav-links .nav-link:hover {
+  background: rgba(59, 58, 58, 0.2);
+}
+#navbar #nav-links .nav-link:hover {
+  transform: scale(1.05);
+}
+
+#hero-section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  width: 100%;
+  height: 100%;
+}
+#hero-section h1 {
+  font-size: 2rem;
+}
+
+#matches-section {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  width: 100%;
+  height: 90vh;
+}
+#matches-section .match-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  height: 30vh;
+  width: 40%;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 10px;
+}
+#matches-section .match-container .main-content {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  height: 60%;
+}
+#matches-section .match-container .main-content h2 {
+  margin: 0;
+}
+#matches-section .match-container .main-content p {
+  margin: 0;
+}
+#matches-section .match-container .match-status {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+#matches-section .match-container .match-status button {
+  border-radius: 10px;
+  color: #e0e6e9;
+  padding: 0.2rem 0.6rem 0.32rem 0.6rem;
+  cursor: pointer;
+  background: rgba(85, 85, 85, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+#matches-section .match-container .match-status button:active {
+  background: rgba(59, 58, 58, 0.2);
+}
+#matches-section .match-container .match-status button:focus {
+  background: rgba(59, 58, 58, 0.2);
+}
+#matches-section .match-container .match-status button:hover {
+  background: rgba(59, 58, 58, 0.2);
+}
+#matches-section .match-container .match-status button.ongoing {
+  background: rgba(53, 61, 42, 0.44);
+  border: 1px solid rgba(138, 201, 38, 0.44);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+#matches-section .match-container .match-status button.ongoing:active {
+  background: rgba(59, 58, 58, 0.2);
+}
+#matches-section .match-container .match-status button.ongoing:focus {
+  background: rgba(59, 58, 58, 0.2);
+}
+#matches-section .match-container .match-status button.ongoing:hover {
+  background: rgba(59, 58, 58, 0.2);
+}
+#matches-section .match-container .match-status button.ended {
+  background: rgba(68, 50, 50, 0.44);
+  border: 1px solid rgba(201, 38, 38, 0.44);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+#matches-section .match-container .match-status button.ended:active {
+  background: rgba(59, 58, 58, 0.2);
+}
+#matches-section .match-container .match-status button.ended:focus {
+  background: rgba(59, 58, 58, 0.2);
+}
+#matches-section .match-container .match-status button.ended:hover {
+  background: rgba(59, 58, 58, 0.2);
+}
+
+#login-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
+  width: 45vw;
+  background: rgba(28, 28, 28, 0.82);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  z-index: 1000;
+  transition: 300ms all;
+  transform: translateX(100%);
+  font-size: 30px;
+}
+@media (orientation: portrait) {
+  #login-container {
+    width: 100vw;
+  }
+}
+#login-container h2 {
+  margin: 0;
+}
+#login-container #close-btn {
+  background: rgba(85, 85, 85, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 10px;
+  color: #e0e6e9;
+  padding: 0.2rem 0.6rem 0.32rem 0.6rem;
+  cursor: pointer;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  z-index: 1002;
+}
+#login-container #close-btn:active {
+  background: rgba(59, 58, 58, 0.2);
+}
+#login-container #close-btn:focus {
+  background: rgba(59, 58, 58, 0.2);
+}
+#login-container #close-btn:hover {
+  background: rgba(59, 58, 58, 0.2);
+}
+#login-container a {
+  position: relative;
+  cursor: pointer;
+  font-size: 0.7em;
+}
+#login-container a:after {
+  content: "";
+  position: absolute;
+  bottom: -0.1rem;
+  left: 0;
+  width: 40%;
+  height: 2px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.16);
+  transition: 0.15s width;
+}
+#login-container a:hover:after {
+  width: 100%;
+}
+#login-container .submit-button {
+  width: 60%;
+  height: 1.5rem;
+  cursor: pointer;
+  border-radius: 10px;
+  color: #151414;
+  transition: 0.15s all;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+#login-container .submit-button:hover {
+  background: rgba(255, 255, 255, 0.82);
+}
+#login-container .input-container {
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0rem;
+}
+#login-container .input-container:not(#password-container) input {
+  transition: 0.3s all;
+  width: 100%;
+}
+#login-container .input-container#password-container input {
+  width: calc(100% - 1.5rem);
+  transition: 0.3s all;
+}
+#login-container .input-container#password-container #show-password {
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+  color: white;
+  margin-left: 0.4rem;
+  width: 1rem;
+  transition: 0.15s all;
+}
+#login-container .input-container#password-container #show-password:hover {
+  color: rgba(255, 255, 255, 0.73);
+}
+#login-container .input-container#password-container #show-password:active {
+  transform: scale(0.95);
+}
+#login-container .input-field {
+  font-family: Novecentos, serif;
+  color: white;
+  height: 1.5rem;
+  box-sizing: border-box;
+  background: rgba(85, 85, 85, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 10px;
+  padding: 0.2rem 0.6rem;
+}
+#login-container .input-field:active {
+  background: rgba(59, 58, 58, 0.2);
+}
+#login-container .input-field:focus {
+  background: rgba(59, 58, 58, 0.2);
+}
+#login-container .input-field:hover {
+  background: rgba(59, 58, 58, 0.2);
+}
+#login-container .input-field:focus {
+  outline: none;
+  transform: scale(1.02);
+}
+#login-container .input-field input:-webkit-autofill,
+#login-container .input-field input:-webkit-autofill:hover,
+#login-container .input-field input:-webkit-autofill:focus,
+#login-container .input-field input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+/*# sourceMappingURL=style.css.map */
